@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: vols-api-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGIN
+        sync: false
+      # Add every secret from .env.example here with sync: false,
+      # then set its value in the Render dashboard.
